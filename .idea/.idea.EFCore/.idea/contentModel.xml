@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\torgg\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_EFCore.606878946.00" t="ExcludeRecursive" />
+    <e p="C:\Users\torgg\Projetos\EFCore" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Controllers" t="Include">
+        <e p="CategoryController.cs" t="Include" />
+        <e p="ProductController.cs" t="Include" />
+      </e>
+      <e p="Data" t="Include">
+        <e p="Maps" t="Include">
+          <e p="CategoryMap.cs" t="Include" />
+          <e p="ProductMap.cs" t="Include" />
+        </e>
+        <e p="StoreDataContext.cs" t="Include" />
+      </e>
+      <e p="EFCore.csproj" t="IncludeRecursive" />
+      <e p="EFCore.sln" t="IncludeFlat" />
+      <e p="Migrations" t="Include">
+        <e p="20180513205631_initial.cs" t="Include" />
+        <e p="20180513205631_initial.Designer.cs" t="Include" />
+        <e p="StoreDataContextModelSnapshot.cs" t="Include" />
+      </e>
+      <e p="Models" t="Include">
+        <e p="Category.cs" t="Include" />
+        <e p="Product.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp2.0" t="Include">
+            <e p="EFCore.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="launchSettings.json" t="Include" />
+      </e>
+      <e p="Startup.cs" t="Include" />
+      <e p="ViewModels" t="Include">
+        <e p="ProductViewModels" t="Include">
+          <e p="EditorProductViewModel.cs" t="Include" />
+          <e p="ListProductViewModel.cs" t="Include" />
+        </e>
+        <e p="ResultViewModel.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>
