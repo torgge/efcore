@@ -116,7 +116,7 @@ namespace EFCore.Controllers
             product.Price = model.Price;
             product.Quantity = model.Quantity;
 
-            _context.Entry<Product>(product).State = EntityState.Modified;
+            _context.Entry(product).State = EntityState.Modified;
             _context.SaveChanges();
 
             return new ResultViewModel
