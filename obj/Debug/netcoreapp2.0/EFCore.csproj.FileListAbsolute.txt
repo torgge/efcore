@@ -9,3 +9,13 @@ C:\Users\torgg\Projetos\EFCore\obj\Debug\netcoreapp2.0\EFCore.AssemblyInfo.cs
 C:\Users\torgg\Projetos\EFCore\obj\Debug\netcoreapp2.0\EFCore.dll
 C:\Users\torgg\Projetos\EFCore\obj\Debug\netcoreapp2.0\EFCore.pdb
 C:\Users\torgg\Projetos\EFCore\obj\Debug\netcoreapp2.0\EFCore.csprojAssemblyReference.cache
+C:\Users\User\projetos\efcore\bin\Debug\netcoreapp2.0\EFCore.deps.json
+C:\Users\User\projetos\efcore\bin\Debug\netcoreapp2.0\EFCore.runtimeconfig.json
+C:\Users\User\projetos\efcore\bin\Debug\netcoreapp2.0\EFCore.runtimeconfig.dev.json
+C:\Users\User\projetos\efcore\bin\Debug\netcoreapp2.0\EFCore.dll
+C:\Users\User\projetos\efcore\bin\Debug\netcoreapp2.0\EFCore.pdb
+C:\Users\User\projetos\efcore\obj\Debug\netcoreapp2.0\EFCore.csproj.CoreCompileInputs.cache
+C:\Users\User\projetos\efcore\obj\Debug\netcoreapp2.0\EFCore.AssemblyInfoInputs.cache
+C:\Users\User\projetos\efcore\obj\Debug\netcoreapp2.0\EFCore.AssemblyInfo.cs
+C:\Users\User\projetos\efcore\obj\Debug\netcoreapp2.0\EFCore.dll
+C:\Users\User\projetos\efcore\obj\Debug\netcoreapp2.0\EFCore.pdb
