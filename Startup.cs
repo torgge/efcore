@@ -1,4 +1,5 @@
 ﻿using EFCore.Data;
+using EFCore.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +14,11 @@ namespace EFCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddResponseCompression();
+            
             services.AddScoped<StoreDataContext, StoreDataContext>();
+            services.AddTransient<ProductRepository, ProductRepository>();
+            services.AddTransient<CategoryRepository, CategoryRepository>();
 
             services.AddSwaggerGen(x =>
             {
@@ -30,6 +35,7 @@ namespace EFCore
             }
 
             app.UseMvc();
+            app.UseResponseCompression();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

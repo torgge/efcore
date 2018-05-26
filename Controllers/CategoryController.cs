@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using EFCore.Data;
+﻿using System.Collections.Generic;
 using EFCore.Models;
+using EFCore.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace EFCore.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly StoreDataContext _context;
-
-        public CategoryController(StoreDataContext context)
+        private readonly CategoryRepository _repository;
+        
+        public CategoryController(CategoryRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
         
         [Route("v1/categories")]
@@ -22,16 +19,17 @@ namespace EFCore.Controllers
         [ResponseCache(Duration = 3600)]
         public IEnumerable<Category> Get()
         {
-            return _context.Categories.AsNoTracking().ToList();
+            return _repository.Get();
         }
 
         [Route("v1/categories/{id}")]
         [HttpGet]
         public Category Get(int id)
         {
-            if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id));
             // Find() ainda não suporta AsNoTracking
-            return _context.Categories.AsNoTracking().FirstOrDefault(x => x.Id == id);
+            var category = _repository.Get(id);
+            category.Products = _repository.GetProductsFromCategory(id);
+            return category;
         }
 
         [Route("v1/categories/{id}/products")]
@@ -39,16 +37,14 @@ namespace EFCore.Controllers
         [ResponseCache(Duration = 30)]
         public IEnumerable<Product> GetProducts(int id)
         {
-            return _context.Products.AsNoTracking().Where(x => x.CategoryId == id).ToList();
+            return _repository.GetProductsFromCategory(id);
         }
 
         [Route("v1/categories")]
         [HttpPost]
         public Category Post([FromBody]Category category)
         {
-            _context.Categories.Add(category);
-            _context.SaveChanges();
-
+            _repository.Save(category);
             return category;
         }
 
@@ -56,9 +52,7 @@ namespace EFCore.Controllers
         [HttpPut]
         public Category Put([FromBody]Category category)
         {
-            _context.Entry<Category>(category).State = EntityState.Modified;
-            _context.SaveChanges();
-
+            _repository.Update(category);
             return category;
         }
 
@@ -66,9 +60,7 @@ namespace EFCore.Controllers
         [HttpDelete]
         public Category Delete([FromBody]Category category)
         {
-            _context.Categories.Remove(category);
-            _context.SaveChanges();
-
+            _repository.Delete(category);
             return category;
         }
     }

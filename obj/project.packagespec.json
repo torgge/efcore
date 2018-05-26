@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\User\\projetos\\efcore\\EFCore.csproj",
+    "projectUniqueName": "C:\\Users\\torgg\\Projetos\\EFCore\\EFCore.csproj",
     "projectName": "EFCore",
-    "projectPath": "C:\\Users\\User\\projetos\\efcore\\EFCore.csproj",
-    "outputPath": "C:\\Users\\User\\projetos\\efcore\\obj\\",
+    "projectPath": "C:\\Users\\torgg\\Projetos\\EFCore\\EFCore.csproj",
+    "outputPath": "C:\\Users\\torgg\\Projetos\\EFCore\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
