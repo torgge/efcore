@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using EFCore.Models;
 using EFCore.Repositories;
+using EFCore.ViewModels;
+using EFCore.ViewModels.CategoryViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EFCore.Controllers
@@ -42,10 +44,29 @@ namespace EFCore.Controllers
 
         [Route("v1/categories")]
         [HttpPost]
-        public Category Post([FromBody]Category category)
+        public ResultViewModel Post([FromBody]EditorCategoryViewModel model)
         {
+            model.Validate();
+            if (model.Invalid)
+                return new ResultViewModel
+                {
+                    Success = model.Valid,
+                    Message = "Não foi possível adicionar nova categoria",
+                    Data = model.Notifications
+
+                };
+            
+            Category category = new Category();
+            category.Id = model.Id;
+            category.Title = model.Title;
+            
             _repository.Save(category);
-            return category;
+            return new ResultViewModel
+            {
+                Success = model.Valid,
+                Message = "Produto criado com sucesso!",
+                Data = category
+            };
         }
 
         [Route("v1/categories")]
