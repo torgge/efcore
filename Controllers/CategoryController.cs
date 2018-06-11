@@ -56,7 +56,7 @@ namespace EFCore.Controllers
 
                 };
             
-            Category category = new Category();
+            var category = new Category();
             category.Id = model.Id;
             category.Title = model.Title;
             

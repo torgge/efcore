@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using EFCore.Data;
-using EFCore.Migrations;
 using EFCore.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal;
 
 namespace EFCore.Repositories
 {
